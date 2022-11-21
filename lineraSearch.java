@@ -10,6 +10,7 @@ public class lineraSearch {
         System.out.println(reverseIndex(arr, target, n - 1));
         findAllIndex(arr, target, 0);
         System.out.println(list);
+        System.out.println(listSorted(arr, target, 0));
     }
 
     // it is returning the boolean value as if the value is their or not
@@ -36,6 +37,12 @@ public class lineraSearch {
         if(index == arr.length) return;
         if(arr[index] == target) list.add(index);
         findAllIndex(arr, target, index + 1);
+    }
+
+    static ArrayList<Integer> listSorted(int[] arr, int target, int index){
+        if (index == arr.length) return list;
+        if (arr[index] == target) list.add(index);
+        return listSorted(arr, target, index + 1);
     }
 
 }
