@@ -1,10 +1,14 @@
+import java.util.ArrayList;
+
 public class lineraSearch {
     public static void main(String[] args) {
-        int[] arr = {11, 22, 33, 44, 55};
+        int[] arr = {11, 22, 33, 33, 44, 55};
         int target = 33;
         System.out.println(solve(arr, target, 0));
         System.out.println(findIndex(arr, target, 0));
         System.out.println(reverseIndex(arr, target, arr.length - 1));
+        findAllIndex(arr, target, 0);
+        System.out.println(list);
     }
 
     // it is returning the boolean value as if the value is their or not
@@ -24,6 +28,13 @@ public class lineraSearch {
         if(index == -1) return -1;
         if(arr[index] == target) return index;
         else return findIndex(arr, target, index - 1);
+    }
+
+    static ArrayList<Integer> list = new ArrayList<>();
+    static void findAllIndex(int[] arr, int target, int index){
+        if(index == arr.length) return;
+        if(arr[index] == target) list.add(index);
+        findAllIndex(arr, target, index + 1);
     }
 
 }
