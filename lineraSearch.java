@@ -4,9 +4,10 @@ public class lineraSearch {
     public static void main(String[] args) {
         int[] arr = {11, 22, 33, 33, 44, 55};
         int target = 33;
+        int n = arr.length;
         System.out.println(solve(arr, target, 0));
         System.out.println(findIndex(arr, target, 0));
-        System.out.println(reverseIndex(arr, target, arr.length - 1));
+        System.out.println(reverseIndex(arr, target, n - 1));
         findAllIndex(arr, target, 0);
         System.out.println(list);
     }
@@ -27,7 +28,7 @@ public class lineraSearch {
     static int reverseIndex(int[] arr, int target, int index){
         if(index == -1) return -1;
         if(arr[index] == target) return index;
-        else return findIndex(arr, target, index - 1);
+        else return reverseIndex(arr, target, index - 1);
     }
 
     static ArrayList<Integer> list = new ArrayList<>();
