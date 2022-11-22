@@ -19,10 +19,25 @@ public class Fibonacci {
         }
         return f[n];
     }
+
+    //Space Optimization technique using two variable . Time -> O(n)
+    // space -> O(1) since it is not using any extra space. 
+    public static int fibSpace(int n){
+        int prev = 0;
+        int curr = 1;
+        for(int i=2; i<=n; i++){
+            int ans = prev + curr;
+            prev = curr;
+            curr = ans;
+        }
+        return curr;
+    }
+
     public static void main(String[] args) {
         int n = 8;
         int[] f = new int[n + 1]; 
         System.out.println(fib(n, f));
         System.out.println(Tab(n));
+        System.out.println(fibSpace(n));
     }
 }
