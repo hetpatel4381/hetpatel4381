@@ -1,3 +1,4 @@
+package fibonacci;
 public class Fibonacci {
 
     //Memoization code O(n) ans in recursin O(2^n);
