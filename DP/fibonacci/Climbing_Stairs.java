@@ -1,3 +1,4 @@
+package fibonacci;
 public class Climbing_Stairs {
 
     //Recursion code time -> O(2^n)
