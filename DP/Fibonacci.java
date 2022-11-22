@@ -7,9 +7,22 @@ public class Fibonacci {
         if(f[n] != 0) return f[n];
         return f[n] = fib(n-1, f) + fib(n-2, f);
     }
+
+    //tabulation method Time -> O(n)
+    //space -> O(n) since it is not using extra recursion space
+    public static int Tab(int n){
+        int[] f = new int[n + 1];
+        f[0] = 0;
+        f[1] = 1;
+        for(int i=2; i<=n; i++){
+            f[i] = f[i-1] + f[i-2];
+        }
+        return f[n];
+    }
     public static void main(String[] args) {
         int n = 8;
         int[] f = new int[n + 1]; 
         System.out.println(fib(n, f));
+        System.out.println(Tab(n));
     }
 }
