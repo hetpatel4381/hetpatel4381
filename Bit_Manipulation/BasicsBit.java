@@ -1,3 +1,4 @@
+package Bit_Manipulation;
 import java.util.Scanner;
 
 public class BasicsBit {
